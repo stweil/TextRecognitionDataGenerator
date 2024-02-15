@@ -195,6 +195,9 @@ class FakeTextDataGenerator(object):
                 print("background_img_st \n {}".format(background_img_st.mean))
 
                 return
+        except ZeroDivisionError:
+            # resized_img_st.mean could not be calculated
+            pass
         except Exception as err:
             return
 
